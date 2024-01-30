@@ -7,11 +7,11 @@ dataSources:
   #### All ERC1155 ####
   - kind: ethereum/contract
     name: IERC1155
-    network: sepolia
+    network: mainnet
     source:
       #address: "" #test 1155 to inspect data
       abi: Contract1155
-      startBlock: 0 #test 1155 to inspect data
+      startBlock: 17500000 #test 1155 to inspect data
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.7

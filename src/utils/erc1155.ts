@@ -1,6 +1,6 @@
 import {Address, BigInt} from "@graphprotocol/graph-ts";
 
-import {IERC721Metadata} from "../../generated/IERC721/IERC721Metadata";
+import {IERC721Metadata} from "../../generated/IERC1155/IERC721Metadata";
 
 import {Collection, Token} from "../../generated/schema";
 

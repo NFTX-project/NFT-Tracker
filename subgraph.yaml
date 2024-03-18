@@ -7,7 +7,7 @@ dataSources:
   #### All ERC721 ####
   - kind: ethereum/contract
     name: IERC721
-    network: mainnet
+    network: arbitrum-one
     source:
       abi: IERC721
       startBlock: 5774644

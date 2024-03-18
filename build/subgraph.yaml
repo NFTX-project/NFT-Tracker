@@ -1,12 +1,12 @@
 specVersion: 0.0.5
-description: 721-MarketPlace
-repository: https://github.com/Data-Nexus/nft-sales-v2
+description: 721-tracker
+repository: https://github.com/Data-Nexus/NFT-Tracker
 schema:
   file: schema.graphql
 dataSources:
   - kind: ethereum/contract
     name: IERC721
-    network: mainnet
+    network: arbitrum-one
     source:
       abi: IERC721
       startBlock: 5774644
@@ -20,12 +20,12 @@ dataSources:
         - account
       abis:
         - name: IERC721
-          file: IERC721\node_modules\@openzeppelin\contracts\build\contracts\IERC721.json
+          file: IERC721/node_modules/@openzeppelin/contracts/build/contracts/IERC721.json
         - name: IERC721Metadata
-          file: IERC721\node_modules\@openzeppelin\contracts\build\contracts\IERC721Metadata.json
+          file: IERC721/node_modules/@openzeppelin/contracts/build/contracts/IERC721Metadata.json
         - name: Contract721
-          file: IERC721\abis\Contract721.json
+          file: IERC721/abis/Contract721.json
       eventHandlers:
         - event: Transfer(indexed address,indexed address,indexed uint256)
           handler: handleTransfer
-      file: IERC721\IERC721.wasm
+      file: IERC721/IERC721.wasm

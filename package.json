@@ -4,6 +4,7 @@
   "scripts": {
     "codegen": "graph codegen",
     "build": "graph build",
+    "deploy-arbitrum": "graph deploy --node https://api.thegraph.com/deploy/ nftx-project/1155-arbitrum-data-nexus",
     "deploy-sepolia": "graph deploy --node https://api.thegraph.com/deploy/ nftx-project/1155-sepolia-data-nexus",
     "deploy-mainnet": "graph deploy --node https://api.thegraph.com/deploy/ nftx-project/1155-mainnet-data-nexus",
     "create-local": "graph create --node http://localhost:8020/ data-nexus/nft-sale",

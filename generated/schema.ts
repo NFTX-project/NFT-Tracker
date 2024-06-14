@@ -8,7 +8,7 @@ import {
   store,
   Bytes,
   BigInt,
-  BigDecimal
+  BigDecimal,
 } from "@graphprotocol/graph-ts";
 
 export class contract extends Entity {
@@ -23,7 +23,7 @@ export class contract extends Entity {
     if (id) {
       assert(
         id.kind == ValueKind.STRING,
-        `Entities of type contract must have an ID of type String but the id '${id.displayData()}' is of type ${id.displayKind()}`
+        `Entities of type contract must have an ID of type String but the id '${id.displayData()}' is of type ${id.displayKind()}`,
       );
       store.set("contract", id.toString(), this);
     }
@@ -80,7 +80,7 @@ export class account extends Entity {
     if (id) {
       assert(
         id.kind == ValueKind.STRING,
-        `Entities of type account must have an ID of type String but the id '${id.displayData()}' is of type ${id.displayKind()}`
+        `Entities of type account must have an ID of type String but the id '${id.displayData()}' is of type ${id.displayKind()}`,
       );
       store.set("account", id.toString(), this);
     }
@@ -115,7 +115,7 @@ export class account extends Entity {
     return new transferLoader(
       "account",
       this.get("id")!.toString(),
-      "transfersFrom"
+      "transfersFrom",
     );
   }
 
@@ -123,7 +123,7 @@ export class account extends Entity {
     return new transferLoader(
       "account",
       this.get("id")!.toString(),
-      "transfersTo"
+      "transfersTo",
     );
   }
 
@@ -144,7 +144,7 @@ export class collection extends Entity {
     if (id) {
       assert(
         id.kind == ValueKind.STRING,
-        `Entities of type collection must have an ID of type String but the id '${id.displayData()}' is of type ${id.displayKind()}`
+        `Entities of type collection must have an ID of type String but the id '${id.displayData()}' is of type ${id.displayKind()}`,
       );
       store.set("collection", id.toString(), this);
     }
@@ -230,7 +230,7 @@ export class collection extends Entity {
     return new holdingLoader(
       "collection",
       this.get("id")!.toString(),
-      "holdings"
+      "holdings",
     );
   }
 }
@@ -247,7 +247,7 @@ export class token extends Entity {
     if (id) {
       assert(
         id.kind == ValueKind.STRING,
-        `Entities of type token must have an ID of type String but the id '${id.displayData()}' is of type ${id.displayKind()}`
+        `Entities of type token must have an ID of type String but the id '${id.displayData()}' is of type ${id.displayKind()}`,
       );
       store.set("token", id.toString(), this);
     }
@@ -334,7 +334,7 @@ export class holding extends Entity {
     if (id) {
       assert(
         id.kind == ValueKind.STRING,
-        `Entities of type holding must have an ID of type String but the id '${id.displayData()}' is of type ${id.displayKind()}`
+        `Entities of type holding must have an ID of type String but the id '${id.displayData()}' is of type ${id.displayKind()}`,
       );
       store.set("holding", id.toString(), this);
     }
@@ -421,7 +421,7 @@ export class transfer extends Entity {
     if (id) {
       assert(
         id.kind == ValueKind.STRING,
-        `Entities of type transfer must have an ID of type String but the id '${id.displayData()}' is of type ${id.displayKind()}`
+        `Entities of type transfer must have an ID of type String but the id '${id.displayData()}' is of type ${id.displayKind()}`,
       );
       store.set("transfer", id.toString(), this);
     }

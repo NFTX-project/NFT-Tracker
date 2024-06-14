@@ -5,13 +5,20 @@
     "codegen": "graph codegen",
     "build": "graph build",
     "deploy": "graph deploy --node https://api.thegraph.com/deploy/ data-nexus/nft-sale",
+<<<<<<< Updated upstream
+=======
+    "deploy-721": "graph deploy --product hosted-service nftx-project/721-arbitrum-data-nexus",
+    "deploy-721-base-sepolia": "graph deploy --studio 721-tracker-base-sepolia",
+    "deploy-1155-base-sepolia": "graph deploy --studio 1155-tracker-base-sepolia",
+    "deploy-1155": "graph deploy --product hosted-service nftx-project/1155-arbitrum-data-nexus",
+>>>>>>> Stashed changes
     "create-local": "graph create --node http://localhost:8020/ data-nexus/nft-sale",
     "remove-local": "graph remove --node http://localhost:8020/ data-nexus/nft-sale",
     "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 data-nexus/nft-sale"
   },
   "dependencies": {
-    "@graphprotocol/graph-cli": "0.58.0",
-    "@graphprotocol/graph-ts": "^0.31.0",
+    "@graphprotocol/graph-cli": "0.74.1",
+    "@graphprotocol/graph-ts": "^0.35.1",
     "@openzeppelin/contracts": "^4.5.0"
   }
 }

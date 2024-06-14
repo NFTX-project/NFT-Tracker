@@ -1,4 +1,4 @@
-specVersion: 0.0.5
+specVersion: 0.0.8
 description: 721-tracker
 repository: https://github.com/Data-Nexus/NFT-Tracker
 schema:
@@ -7,10 +7,14 @@ dataSources:
   #### All ERC721 ####
   - kind: ethereum/contract
     name: IERC721
+<<<<<<< Updated upstream
     network: mainnet
+=======
+    network: base-sepolia
+>>>>>>> Stashed changes
     source:
       abi: IERC721
-      startBlock: 5774644
+      startBlock: 1
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.7

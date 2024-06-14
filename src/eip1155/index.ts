@@ -9,7 +9,7 @@ import {constants} from "../graphprotocol-utils";
 import {store, BigInt, ethereum, Address, Bytes} from "@graphprotocol/graph-ts";
 import {getOrCreateAccount} from "../utils/entity-factory";
 
-const IGNORE_CONTRACT_ADDRESS = "0xabe3b6b8eedeb953046e3c5e83fbce0cf9625e64";
+const IGNORE_CONTRACT_ADDRESS = "0x6a7eea314b8d32d71f80ff92a722cfcb93820863";
 
 export function handleTransferSingle(event: TransferEvent): void {
   if (event.params.from.toHexString() == constants.ADDRESS_ZERO

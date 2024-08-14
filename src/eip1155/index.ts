@@ -9,11 +9,19 @@ import {constants} from "../graphprotocol-utils";
 import {store, BigInt, ethereum, Address, Bytes} from "@graphprotocol/graph-ts";
 import {getOrCreateAccount} from "../utils/entity-factory";
 
-const IGNORE_CONTRACT_ADDRESS = "0x6a7eea314b8d32d71f80ff92a722cfcb93820863";
+const IGNORE_CONTRACT_ADDRESSES = [
+  "0xe0427d3a6a1cde18e0d697e20c71b0c86ee0bc4c", //base seplia
+  "0xd17528b58Ba1D1E3DDdC48B1cE3B892049889c93", // eth sepolia
+  "0xaBe3b6b8EEDeB953046e3C5E83FbCE0cF9625E64" // eth sepolia
+];
+
+function isIgnoredAddress(address: string): boolean {
+  return IGNORE_CONTRACT_ADDRESSES.includes(address);
+}
 
 export function handleTransferSingle(event: TransferEvent): void {
   if (event.params.from.toHexString() == constants.ADDRESS_ZERO
-  && event.address.toHexString() == IGNORE_CONTRACT_ADDRESS) {
+  && isIgnoredAddress(event.address.toHexString())) {
     return;
   }
   transfer(
@@ -31,7 +39,7 @@ export function handleTransferSingle(event: TransferEvent): void {
 
 export function handleTransferBatch(event: TransferBatchEvent): void {
   if (event.params.from.toHexString() == constants.ADDRESS_ZERO
-  && event.address.toHexString() == IGNORE_CONTRACT_ADDRESS) {
+  && isIgnoredAddress(event.address.toHexString())) {
     return;
   }
   for (let index = 0; index < event.params.ids.length; index++) {
